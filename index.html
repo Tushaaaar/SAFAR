@@ -140,7 +140,7 @@
                     </button>
                     <div class="emergency-status">
                         <span class="status status--success">✓ Connected to SAFARCENTRAL</span>
-                        <p>Zone: Delhi Central | Officer: Available</p>
+                        <p>Zone: Jaipur Central | Officer: Available</p>
                     </div>
                 </div>
             </div>
@@ -327,7 +327,7 @@
                         </div>
                     </div>
                     <div class="cert-info">
-                        <p><strong>Zone:</strong> Delhi Central</p>
+                        <p><strong>Zone:</strong> Jaipur Central</p>
                         <p><strong>Rating:</strong> ⭐ 4.8/5.0</p>
                         <p><strong>Tours Completed:</strong> 127</p>
                     </div>
@@ -354,38 +354,25 @@
                 </div>
             </div>
 
-            <div class="dashboard-card services-hub">
-                <h3>🏨 Service Provider Network</h3>
-                <div class="services-grid">
-                    <div class="service-category">
-                        <h4>🏨 Hotels</h4>
-                        <div class="service-list">
-                            <div class="service-item">
-                                <span>Taj Delhi</span>
-                                <span class="status status--success">Available</span>
-                                <button class="btn btn--sm btn--primary">Book</button>
-                            </div>
-                            <div class="service-item">
-                                <span>Hotel Ashok</span>
-                                <span class="status status--success">Available</span>
-                                <button class="btn btn--sm btn--primary">Book</button>
-                            </div>
-                        </div>
+            <div class="dashboard-card income-card">
+                <h3>💰 Today's Income</h3>
+                <div class="stat-item" style="background: var(--color-bg-3); padding: var(--space-20);">
+                    <span class="stat-number" style="font-size: var(--font-size-4xl);">₹ 4,500</span>
+                    <span class="stat-label">from 3 completed tours</span>
+                </div>
+            </div>
+
+            <div class="dashboard-card booking-card">
+                <h3>🗓️ Upcoming Booking Request</h3>
+                <div class="request-item" style="background: var(--color-bg-5);">
+                    <div class="request-info">
+                        <p><strong>SafarID:</strong> SAFAR003 (Mohit Sharma)</p>
+                        <p><strong>Service:</strong> Full-day City Tour</p>
+                        <p><strong>Date:</strong> 15 Sep 2025, 9:00 AM</p>
                     </div>
-                    <div class="service-category">
-                        <h4>🚗 Transport</h4>
-                        <div class="service-list">
-                            <div class="service-item">
-                                <span>Cab - Ramesh Kumar</span>
-                                <span class="status status--success">Available</span>
-                                <button class="btn btn--sm btn--primary">Assign</button>
-                            </div>
-                            <div class="service-item">
-                                <span>Auto - Suresh Yadav</span>
-                                <span class="status status--warning">Busy</span>
-                                <button class="btn btn--sm btn--outline" disabled>Unavailable</button>
-                            </div>
-                        </div>
+                    <div class="request-actions" style="display: flex; gap: var(--space-8); margin-top: 12px;">
+                        <button class="btn btn--primary btn--sm">Accept</button>
+                        <button class="btn btn--outline btn--sm">Decline</button>
                     </div>
                 </div>
             </div>
@@ -465,32 +452,21 @@
             </div>
 
             <div class="dashboard-card tracking-panel">
-                <h3>👤 SafarID Tracking Panel</h3>
-                <div class="tracking-list">
-                    <div class="tracked-user">
-                        <div class="user-info-panel">
-                            <span class="user-id">SAFAR001 - Vaibhav Shakya</span>
-                            <span class="user-location">JECRC Foundation</span>
-                            <span class="status status--success">Active</span>
-                        </div>
-                        <div class="user-guide">Guide: GUIDE001 (Naveen)</div>
+                <h3>📍 Live Tourist Map (JECRC Foundation Area)</h3>
+                <div class="map-container" style="position: relative; height: 280px; background-color: #e8f8f5; border-radius: var(--radius-base); background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px); background-size: 25px 25px; border: 1px solid var(--color-border); overflow: hidden;">
+                    <div class="map-pin" style="position: absolute; top: 30%; left: 40%; transform: translate(-50%, -100%); text-align: center; cursor: pointer;">
+                        <div style="background: var(--color-success); color: white; padding: 4px 8px; border-radius: 8px; font-size: 12px; font-weight: bold; white-space: nowrap;">SAFAR001</div>
+                        <div style="width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 10px solid var(--color-success); margin: 0 auto;"></div>
                     </div>
-                    <div class="tracked-user">
-                        <div class="user-info-panel">
-                            <span class="user-id">SAFAR002 - Himanshu Gaur</span>
-                            <span class="user-location">JECRC Foundation</span>
-                            <span class="status status--success">Active</span>
-                        </div>
-                        <div class="user-guide">Guide: GUIDE002 (Aayushi Giri)</div>
+                    <div class="map-pin" style="position: absolute; top: 55%; left: 65%; transform: translate(-50%, -100%); text-align: center; cursor: pointer;">
+                        <div style="background: var(--color-success); color: white; padding: 4px 8px; border-radius: 8px; font-size: 12px; font-weight: bold; white-space: nowrap;">SAFAR002</div>
+                        <div style="width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 10px solid var(--color-success); margin: 0 auto;"></div>
                     </div>
-                    <div class="tracked-user">
-                        <div class="user-info-panel">
-                            <span class="user-id">SAFAR003 - Mohit Sharma</span>
-                            <span class="user-location">JECRC Foundation</span>
-                            <span class="status status--warning">Inactive</span>
-                        </div>
-                        <div class="user-guide">No Guide Assigned</div>
+                     <div class="map-pin" style="position: absolute; top: 70%; left: 20%; transform: translate(-50%, -100%); text-align: center; cursor: pointer;">
+                        <div style="background: var(--color-warning); color: white; padding: 4px 8px; border-radius: 8px; font-size: 12px; font-weight: bold; white-space: nowrap;">SAFAR003</div>
+                        <div style="width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 10px solid var(--color-warning); margin: 0 auto;"></div>
                     </div>
+                    <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(255, 255, 255, 0.8); padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 500;">JECRC Foundation Campus</div>
                 </div>
             </div>
 
@@ -562,9 +538,9 @@
                 <div class="tab-content">
                     <div id="safar-info" class="tab-panel active">
                         <div class="profile-card">
-                            <h4>SAFAR001 - John Smith</h4>
+                            <h4>SAFAR001 - Vaibhav Shakya</h4>
                             <p><strong>Status:</strong> Active Tourist</p>
-                            <p><strong>Location:</strong> Red Fort Area</p>
+                            <p><strong>Location:</strong> Jantar Mantar Area</p>
                             <p><strong>Emergency Contact:</strong> +1-555-0123</p>
                             <p><strong>Document Status:</strong> ✓ Verified</p>
                         </div>
