@@ -356,21 +356,21 @@
 
             <div class="dashboard-card income-card">
                 <h3>💰 Today's Income</h3>
-                <div class="stat-item" style="background: var(--color-bg-3); padding: var(--space-20);">
-                    <span class="stat-number" style="font-size: var(--font-size-4xl);">₹ 4,500</span>
+                <div class="stat-item">
+                    <span class="stat-number">₹ 4,500</span>
                     <span class="stat-label">from 3 completed tours</span>
                 </div>
             </div>
 
             <div class="dashboard-card booking-card">
                 <h3>🗓️ Upcoming Booking Request</h3>
-                <div class="request-item" style="background: var(--color-bg-5);">
+                <div class="request-item">
                     <div class="request-info">
                         <p><strong>SafarID:</strong> SAFAR003 (Mohit Sharma)</p>
                         <p><strong>Service:</strong> Full-day City Tour</p>
                         <p><strong>Date:</strong> 15 Sep 2025, 9:00 AM</p>
                     </div>
-                    <div class="request-actions" style="display: flex; gap: var(--space-8); margin-top: 12px;">
+                    <div class="request-actions">
                         <button class="btn btn--primary btn--sm">Accept</button>
                         <button class="btn btn--outline btn--sm">Decline</button>
                     </div>
@@ -453,20 +453,20 @@
 
             <div class="dashboard-card tracking-panel">
                 <h3>📍 Live Tourist Map (JECRC Foundation Area)</h3>
-                <div class="map-container" style="position: relative; height: 280px; background-color: #e8f8f5; border-radius: var(--radius-base); background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px); background-size: 25px 25px; border: 1px solid var(--color-border); overflow: hidden;">
-                    <div class="map-pin" style="position: absolute; top: 30%; left: 40%; transform: translate(-50%, -100%); text-align: center; cursor: pointer;">
-                        <div style="background: var(--color-success); color: white; padding: 4px 8px; border-radius: 8px; font-size: 12px; font-weight: bold; white-space: nowrap;">SAFAR001</div>
-                        <div style="width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 10px solid var(--color-success); margin: 0 auto;"></div>
+                <div class="map-container">
+                    <div class="map-pin" style="top: 30%; left: 40%;">
+                        <div class="map-pin__label">SAFAR001</div>
+                        <div class="map-pin__arrow"></div>
                     </div>
-                    <div class="map-pin" style="position: absolute; top: 55%; left: 65%; transform: translate(-50%, -100%); text-align: center; cursor: pointer;">
-                        <div style="background: var(--color-success); color: white; padding: 4px 8px; border-radius: 8px; font-size: 12px; font-weight: bold; white-space: nowrap;">SAFAR002</div>
-                        <div style="width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 10px solid var(--color-success); margin: 0 auto;"></div>
+                    <div class="map-pin" style="top: 55%; left: 65%;">
+                        <div class="map-pin__label">SAFAR002</div>
+                        <div class="map-pin__arrow"></div>
                     </div>
-                     <div class="map-pin" style="position: absolute; top: 70%; left: 20%; transform: translate(-50%, -100%); text-align: center; cursor: pointer;">
-                        <div style="background: var(--color-warning); color: white; padding: 4px 8px; border-radius: 8px; font-size: 12px; font-weight: bold; white-space: nowrap;">SAFAR003</div>
-                        <div style="width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 10px solid var(--color-warning); margin: 0 auto;"></div>
+                     <div class="map-pin" style="top: 70%; left: 20%;">
+                        <div class="map-pin__label map-pin__label--inactive">SAFAR003</div>
+                        <div class="map-pin__arrow map-pin__arrow--inactive"></div>
                     </div>
-                    <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(255, 255, 255, 0.8); padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 500;">JECRC Foundation Campus</div>
+                    <div class="map-label">JECRC Foundation Campus</div>
                 </div>
             </div>
 
