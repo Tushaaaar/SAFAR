@@ -8,7 +8,7 @@ const AppState = {
     panicButtonTimer: null,
     locationTracking: true,
     companionLinks: [],
-    currentZone: 'Delhi Central',
+    currentZone: 'Jaipur Central',
     centralId: 'CENT001',
     emergencyContacts: [
         { name: "Emergency Services", number: "112" },
@@ -37,7 +37,7 @@ const ServiceData = {
         "Emergency: Please respond immediately to confirm your safety."
     ],
     hotels: [
-        {name: "Taj Delhi", rating: 5, availability: true, guideId: "GUIDE001"},
+        {name: "Taj Jaipur", rating: 5, availability: true, guideId: "GUIDE001"},
         {name: "Hotel Ashok", rating: 4, availability: true, guideId: "GUIDE001"},
         {name: "The Leela Palace", rating: 5, availability: false, guideId: "GUIDE002"}
     ],
@@ -484,8 +484,8 @@ function initializeTransportSafety() {
 function initializeSafarguideFeatures() {
     console.log('Initializing SAFARGUIDE features...');
     initializeTouristLookup();
-    initializeServiceBooking();
     initializeDriverCoordination();
+    initializeBookingActions(); // Added for new booking tile
 }
 
 function initializeTouristLookup() {
@@ -533,25 +533,6 @@ function displayTouristInfo(tourist) {
     }
 }
 
-function initializeServiceBooking() {
-    document.querySelectorAll('.service-item .btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const serviceName = this.parentElement.querySelector('span').textContent;
-            if (this.textContent === 'Book') {
-                this.textContent = 'Booked';
-                this.disabled = true;
-                this.classList.add('btn--secondary');
-                showNotification(`🏨 ${serviceName} booked successfully!`, 'success');
-            } else if (this.textContent === 'Assign') {
-                this.textContent = 'Assigned';
-                this.disabled = true;
-                this.classList.add('btn--secondary');
-                showNotification(`🚗 ${serviceName} assigned to tourist`, 'success');
-            }
-        });
-    });
-}
-
 function initializeDriverCoordination() {
     const requestApprovalBtn = document.getElementById('requestApproval');
     
@@ -569,6 +550,33 @@ function initializeDriverCoordination() {
         });
     }
 }
+
+function initializeBookingActions() {
+    const bookingCard = document.querySelector('.booking-card');
+    if (!bookingCard) return;
+
+    const acceptBtn = bookingCard.querySelector('.btn--primary');
+    const declineBtn = bookingCard.querySelector('.btn--outline');
+
+    if (acceptBtn && declineBtn) {
+        acceptBtn.addEventListener('click', function() {
+            showNotification('✅ Booking accepted for SAFAR003!', 'success');
+            bookingCard.querySelector('.request-item').style.opacity = '0.5';
+            acceptBtn.disabled = true;
+            declineBtn.disabled = true;
+            acceptBtn.textContent = 'Accepted';
+        });
+
+        declineBtn.addEventListener('click', function() {
+            showNotification('❌ Booking declined.', 'info');
+            bookingCard.querySelector('.request-item').style.opacity = '0.5';
+            acceptBtn.disabled = true;
+            declineBtn.disabled = true;
+            declineBtn.textContent = 'Declined';
+        });
+    }
+}
+
 
 // SAFARCENTRAL Features
 function initializeSafarcentralFeatures() {
@@ -657,7 +665,7 @@ function updateTrackingData() {
     trackedUsers.forEach(user => {
         const location = user.querySelector('.user-location');
         if (location && Math.random() > 0.7) {
-            const locations = ['Red Fort Area', 'India Gate Area', 'Lotus Temple', 'Qutub Minar'];
+            const locations = ['Jantar Mantar Area', 'India Gate Area', 'Lotus Temple', 'Qutub Minar'];
             location.textContent = locations[Math.floor(Math.random() * locations.length)];
         }
     });
